@@ -1,11 +1,11 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 export default function StartPage({ history }) {
   return (
-    <div>
+    <Container>
       <button onClick={() => history.push('/quiz')}>Começar</button>
-    </div>
+    </Container>
   );
 }
