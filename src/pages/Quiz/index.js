@@ -6,12 +6,16 @@ import Board from '../../assets/board.png';
 import api from "../../services/api";
 
 export default class Quiz extends Component {
-  state = {
-    questions: [],
-    quiz: 0,
-    checkAnswerMessage: "",
-    endGame: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      questions: [],
+      quiz: 0,
+      checkAnswerMessage: "",
+      endGame: false
+    };
+    this.char = React.createRef();
+  }
 
   componentDidMount() {
     this.loadQuestions();
@@ -38,6 +42,19 @@ export default class Quiz extends Component {
           quiz: nextQuiz,
           checkAnswerMessage: ""
         });
+
+        const char = this.char.current;
+        char.style.animationDuration = '2s';
+        
+        if (char.style.marginLeft === '') {
+          char.style.marginLeft = '0px';
+        }
+        
+        char.style.marginLeft = (parseInt(char.style.marginLeft, 10) + 97) + 'px';
+        setTimeout(() => {
+          char.style.animationDuration = '0s';
+        }, 2000);
+
         document.getElementById("answerInput").value = "";
       } else {
         this.setState({
@@ -57,7 +74,7 @@ export default class Quiz extends Component {
         <ImageFrame>
           <img src={Board} alt="" />
           <Char>
-            <div></div>
+            <div ref={this.char}></div>
           </Char>
         </ImageFrame>
         <QuizFrame>

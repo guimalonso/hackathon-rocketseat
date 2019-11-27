@@ -22,6 +22,7 @@ export const ImageFrame = styled.div`
     position: absolute;
     top: 295px;
     left: 55px;
+    margin-left: 0px;
     width: 100%
   }
 `;
@@ -45,8 +46,10 @@ export const Char = styled.div`
     top: 30%;
     z-index: 99999;
     margin-top: 30px;
+    margin-left: 0px;
     -webkit-animation: boy 0s steps(8) infinite;
     animation: boy 0s steps(8) infinite;
+    transition: margin 2s;
   }
 
   @keyframes boy {
