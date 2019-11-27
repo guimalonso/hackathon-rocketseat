@@ -10,7 +10,8 @@
         "a / b"
       ],
       "answer": "return a + b",
-      "level": 1
+      "level": 1,
+      "code": "function (a, b) {\n|input|\n}"
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
         "a * b"
       ],
       "answer": "return a / b",
-      "level": 1
+      "level": 1,
+      "code": "function (a, b) {\n|input|\n}"
     },
     {
       "id": 3,
@@ -34,7 +36,8 @@
         "b / h * 2"
       ],
       "answer": "return b * h / 2",
-      "level": 2
+      "level": 2,
+      "code": "function (b, h) {\n|input|\n}"
     },
     {
       "id": 4,
@@ -46,7 +49,8 @@
         "3.14 * r * r"
       ],
       "answer": "return 3.14 * r * r",
-      "level": 2
+      "level": 2,
+      "code": "function (r) {\n|input|\n}"
     }
   ]
 }
