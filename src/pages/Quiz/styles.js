@@ -11,9 +11,18 @@ export const ImageFrame = styled.div`
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
   width: 50%;
 
-  img:first-child {
+  span {
+    font-size: 16px;
+    color: green;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+  }
+
+  img {
     margin: auto;
     width: 95%;
   }
@@ -30,13 +39,46 @@ export const ImageFrame = styled.div`
 export const QuizFrame = styled.div`
   padding: 10px;
   width: 50%;
+  background: linear-gradient(225deg, #000 60%, #1b2d4a);
+  color: #fff;
+  padding: 40px;
+
+  button {
+    background-color: #F7BE29;
+    border: 5px solid #D47439;
+    border-radius: 100px;
+    padding: 10px 30px;
+    color: #333;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &:hover {
+      background-color: #CC961B;
+    }
+  }
+
+  > span {
+    margin-right: 10px;
+    color: ${props => props.endGame ? 'green' : 'red'};
+    font-weight: bold;
+  }
 `;
 
 export const Question = styled.div``;
 
 export const Answers = styled.ul``;
 
-export const Code = styled.div``;
+export const Code = styled.div`
+  margin-bottom: 10px;
+
+  input {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: 0;
+  }
+`;
 
 export const Char = styled.div`
   > div {

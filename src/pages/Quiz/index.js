@@ -45,17 +45,15 @@ export default class Quiz extends Component {
 
         const char = this.char.current;
         char.style.animationDuration = '2s';
-        
+
         if (char.style.marginLeft === '') {
           char.style.marginLeft = '0px';
         }
-        
+
         char.style.marginLeft = (parseInt(char.style.marginLeft, 10) + 97) + 'px';
         setTimeout(() => {
           char.style.animationDuration = '0s';
         }, 2000);
-
-        document.getElementById("answerInput").value = "";
       } else {
         this.setState({
           endGame: true,
@@ -63,6 +61,7 @@ export default class Quiz extends Component {
         });
       }
     }
+    document.getElementById("answerInput").value = "";
   };
 
   render() {
@@ -72,19 +71,20 @@ export default class Quiz extends Component {
     return (
       <Container>
         <ImageFrame>
+          <span>{this.state.endGame && 'Parabéns, você concluiu com sucesso!'}</span>
           <img src={Board} alt="" />
           <Char>
             <div ref={this.char}></div>
           </Char>
         </ImageFrame>
-        <QuizFrame>
+        <QuizFrame endGame={this.state.endGame}>
           {question && (
             <>
               <Question>
                 <p>{question.title}</p>
               </Question>
               <Answers>
-                {question.options.map(function(q, index) {
+                {question.options.map(function (q, index) {
                   return <li key={index}>{q}</li>;
                 })}
               </Answers>
@@ -94,7 +94,12 @@ export default class Quiz extends Component {
                     if (line === "|input|") {
                       return (
                         <Fragment key={index}>
-                          <input type="text" id="answerInput" />
+                          <input
+                            type="text"
+                            id="answerInput"
+                            placeholder="// Responda aqui"
+                            autoComplete="off"
+                          />
                           <br />
                         </Fragment>
                       );
