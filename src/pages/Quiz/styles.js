@@ -8,6 +8,6 @@ export const QuizFrame = styled.div``;
 
 export const Question = styled.div``;
 
-export const Answers = styled.div``;
+export const Answers = styled.ul``;
 
 export const Code = styled.div``;

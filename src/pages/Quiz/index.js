@@ -6,7 +6,7 @@ import api from "../../services/api";
 
 export default class Quiz extends Component {
   state = {
-    questions: [],
+    question: [],
     quiz: 1
   };
 
@@ -17,13 +17,16 @@ export default class Quiz extends Component {
   loadQuestions = async () => {
     const response = await api.get("/questions");
 
-    const questions = response.data;
+    const question = response.data[this.state.quiz];
 
-    this.setState({ questions });
+    this.setState({ question });
+
+    console.log(this.state.question);
   };
 
   render() {
-    const { questions, quiz } = this.state;
+    const { question } = this.state;
+    console.log(question.options);
 
     return (
       <>
@@ -33,14 +36,12 @@ export default class Quiz extends Component {
         </ImageFrame>
         <QuizFrame>
           <Question>
-            <p>
-              {questions.map(function(question) {
-                if (question.id === quiz)
-                  return <li key={question.id}>{question.title}</li>;
-              })}
-            </p>
+            <p>{question.title}</p>
           </Question>
           <Answers>
+            {/* {question.options.map(function(q) {
+              return <li key={q}>{q}</li>;
+            })} */}
             <li>a</li>
             <li>b</li>
             <li>c</li>
