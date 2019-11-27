@@ -2,10 +2,10 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function StartPage() {
+export default function StartPage({ history }) {
   return (
     <div>
-      <button>Começar</button>
+      <button onClick={() => history.push('/quiz')}>Começar</button>
     </div>
   );
 }
