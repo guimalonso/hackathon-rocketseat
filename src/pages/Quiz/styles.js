@@ -6,13 +6,13 @@ export const Container = styled.div`
 `;
 
 export const ImageFrame = styled.div`
-  align-items: center;
   background-image: url('bg.png');
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
   position: relative;
   width: 50%;
+  min-width: 750px;
 
   span {
     font-size: 16px;
@@ -24,7 +24,7 @@ export const ImageFrame = styled.div`
 
   img {
     margin: auto;
-    width: 95%;
+    width: 750px;
   }
 
   div {
@@ -38,7 +38,6 @@ export const ImageFrame = styled.div`
 
 export const QuizFrame = styled.div`
   padding: 10px;
-  width: 50%;
   background: linear-gradient(225deg, #000 60%, #1b2d4a);
   color: #fff;
   padding: 40px;
