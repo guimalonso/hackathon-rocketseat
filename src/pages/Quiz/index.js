@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 
-import { ImageFrame, QuizFrame, Question, Answers, Code } from "./styles";
+import { Container, ImageFrame, QuizFrame, Question, Answers, Code, Char } from "./styles";
+import Board from '../../assets/board.png';
 
 import api from "../../services/api";
 
@@ -41,7 +42,7 @@ export default class Quiz extends Component {
       } else {
         this.setState({
           endGame: true,
-          checkAnswerMessage: ""
+          checkAnswerMessage: "Parabéns, você concluiu o desafio!"
         });
       }
     }
@@ -52,10 +53,12 @@ export default class Quiz extends Component {
     const question = questions[quiz];
 
     return (
-      <>
+      <Container>
         <ImageFrame>
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <img src={Board} alt="" />
+          <Char>
+            <div></div>
+          </Char>
         </ImageFrame>
         <QuizFrame>
           {question && (
@@ -95,7 +98,7 @@ export default class Quiz extends Component {
             </>
           )}
         </QuizFrame>
-      </>
+      </Container>
     );
   }
 }
