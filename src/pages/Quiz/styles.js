@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-export const ImageFrame = styled.form``;
+export const Container = styled.div``;
 
-export const QuizFrame = styled.form``;
+export const ImageFrame = styled.div``;
 
-export const Question = styled.form``;
+export const QuizFrame = styled.div``;
 
-export const Answers = styled.form``;
+export const Question = styled.div``;
 
-export const Code = styled.form``;
+export const Answers = styled.div``;
+
+export const Code = styled.div``;
