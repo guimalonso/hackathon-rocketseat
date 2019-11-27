@@ -74,6 +74,7 @@ export const Code = styled.div`
   input {
     background-color: transparent;
     color: #fff;
+    margin-left: 20px;
     border: none;
     outline: 0;
   }
