@@ -7,7 +7,7 @@ import api from "../../services/api";
 export default class Quiz extends Component {
   state = {
     question: [],
-    quiz: 1
+    quiz: 0
   };
 
   componentDidMount() {
@@ -38,15 +38,11 @@ export default class Quiz extends Component {
           <Question>
             <p>{question.title}</p>
           </Question>
-          <Answers>
-            {/* {question.options.map(function(q) {
-              return <li key={q}>{q}</li>;
-            })} */}
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>d</li>
-          </Answers>
+          {question.options && <Answers>
+            {question.options.map(function(q, index) {
+              return <li key={index}>{q}</li>;
+            })}
+          </Answers>}
           <Code>soma</Code>
           <span></span>
           <button>Enviar</button>
