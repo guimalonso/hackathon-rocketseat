@@ -1,10 +1,9 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import { Container, ImageFrame, QuizFrame, Question, Answers, Code } from './styles';
 
 export default function Quiz() {
   return (
-    <>
+    <Container>
       <ImageFrame>
         <img src="" alt="" />
         <img src="" alt="" />
@@ -28,6 +27,6 @@ export default function Quiz() {
         <span></span>
         <button>Enviar</button>
       </QuizFrame>
-    </>
+    </Container>
   );
 }
