@@ -4,48 +4,48 @@
       "id": 1,
       "title": "Conclua a função abaixo para que retorne a soma de 2 números. Utilize uma das opções abaixo:",
       "options": [
-        { "1": "a + b" },
-        { "2": "return a * b" },
-        { "3": "return a + b" },
-        { "2": "a / b" }
+        "a + b",
+        "return a * b",
+        "return a + b",
+        "a / b"
       ],
-      "answer": "3",
+      "answer": "return a + b",
       "level": 1
     },
     {
       "id": 2,
       "title": "Conclua a função abaixo para que retorne a divisão de 2 números. Utilize uma das opções abaixo:",
       "options": [
-        { "1": "return a + b" },
-        { "2": "return a / b" },
-        { "3": "a / b" },
-        { "2": "a * b" }
+        "return a + b",
+        "return a / b",
+        "a / b",
+        "a * b",
       ],
-      "answer": "2",
+      "answer": "return a / b",
       "level": 1
     },
     {
       "id": 3,
       "title": "Conclua a função abaixo para que retorne a área de um triângulo. Utilize uma das opções abaixo, considerando 'b' como valor da base e 'h' como valor da altura:",
       "options": [
-        { "1": "return b / h * 2" },
-        { "2": "b * h / 2" },
-        { "3": "return b * h / 2" },
-        { "2": "b / h * 2" }
+        "return b / h * 2",
+        "b * h / 2",
+        "return b * h / 2",
+        "b / h * 2"
       ],
-      "answer": "3",
+      "answer": "return b * h / 2",
       "level": 2
     },
     {
       "id": 4,
       "title": "Conclua a função abaixo para que retorne a área de um círculo. Utilize uma das opções abaixo considerando 'pi' como 3,14 e 'r' como valor do raio:",
       "options": [
-        { "1": "return 3.14 * r * r" },
-        { "2": "3.14 * r" },
-        { "3": "return 3.14 * r" },
-        { "2": "3.14 * r * r" }
+        "return 3.14 * r * r",
+        "3.14 * r",
+        "return 3.14 * r",
+        "3.14 * r * r"
       ],
-      "answer": "1",
+      "answer": "return 3.14 * r * r",
       "level": 2
     }
   ]
