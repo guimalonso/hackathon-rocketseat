@@ -7,7 +7,8 @@ import api from "../../services/api";
 export default class Quiz extends Component {
   state = {
     question: [],
-    quiz: 0
+    quiz: 0,
+    checkAnswerMessage: ''
   };
 
   componentDidMount() {
@@ -22,6 +23,14 @@ export default class Quiz extends Component {
     this.setState({ question });
 
     console.log(this.state.question);
+  };
+
+  checkAnswer = () => {
+    const answer = document.getElementById('answerText');
+
+    if (answer !== this.state.question.answer) {
+      this.setState({ checkAnswerMessage: 'Resposta incorreta' });
+    }
   };
 
   render() {
@@ -39,13 +48,16 @@ export default class Quiz extends Component {
             <p>{question.title}</p>
           </Question>
           {question.options && <Answers>
-            {question.options.map(function(q, index) {
+            {question.options.map(function (q, index) {
               return <li key={index}>{q}</li>;
             })}
           </Answers>}
-          <Code>soma</Code>
-          <span></span>
-          <button>Enviar</button>
+          <Code>
+            {question.code.replace('|input|',
+              `<input type="text" id="answerInput">`)}
+          </Code>
+          <span>{this.state.checkAnswerMessage}</span>
+          <button onClick={this.checkAnswer}>Enviar</button>
         </QuizFrame>
       </>
     );
