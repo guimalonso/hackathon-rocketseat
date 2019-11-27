@@ -30,7 +30,7 @@ export const ImageFrame = styled.div`
   div {
     position: absolute;
     /* top: 295px; */
-    left: 55px;
+    left: 0px;
     margin-left: 0px;
     width: 100%
   }
