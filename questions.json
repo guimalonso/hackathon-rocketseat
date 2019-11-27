@@ -3,12 +3,7 @@
     {
       "id": 1,
       "title": "Conclua a função abaixo para que retorne a soma de 2 números. Utilize uma das opções abaixo:",
-      "options": [
-        "a + b",
-        "return a * b",
-        "return a + b",
-        "a / b"
-      ],
+      "options": ["a + b", "return a * b", "return a + b", "a / b"],
       "answer": "return a + b",
       "level": 1,
       "code": "function (a, b) {\n|input|\n}"
@@ -16,12 +11,7 @@
     {
       "id": 2,
       "title": "Conclua a função abaixo para que retorne a divisão de 2 números. Utilize uma das opções abaixo:",
-      "options": [
-        "return a + b",
-        "return a / b",
-        "a / b",
-        "a * b"
-      ],
+      "options": ["return a + b", "return a / b", "a / b", "a * b"],
       "answer": "return a / b",
       "level": 1,
       "code": "function (a, b) {\n|input|\n}"
@@ -50,6 +40,32 @@
       ],
       "answer": "return 3.14 * r * r",
       "level": 2,
+      "code": "function (r) {\n|input|\n}"
+    },
+    {
+      "id": 5,
+      "title": "Conclua a função abaixo para que retorne a área de uma esfera. Utilize uma das opções abaixo considerando 'pi' como 3,14 e 'r' como valor do raio:",
+      "options": [
+        "return 3.14 * r * r",
+        "4 * 3.14 * r * r",
+        "return 3.14 * r * r",
+        "return 4 * 3.14 * r * r"
+      ],
+      "answer": "return 4 * 3.14 * r * r",
+      "level": 3,
+      "code": "function (r) {\n|input|\n}"
+    },
+    {
+      "id": 6,
+      "title": "Conclua a função abaixo para que retorne o volume de um cilindro. Utilize uma das opções abaixo considerando 'h' como altura, 'pi' como 3,14 e 'r' como valor do raio:",
+      "options": [
+        "return 3.14 * r * r * h",
+        "3.14 * r",
+        "return 3.14 * r * h",
+        "3.14 * r * r * h"
+      ],
+      "answer": "return 3.14 * r * r * h",
+      "level": 3,
       "code": "function (r) {\n|input|\n}"
     }
   ]
