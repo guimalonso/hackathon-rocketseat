@@ -8,7 +8,7 @@ export default class Quiz extends Component {
   state = {
     questions: [],
     quiz: 0,
-    checkAnswerMessage: '',
+    checkAnswerMessage: "",
     endGame: false
   };
 
@@ -24,24 +24,24 @@ export default class Quiz extends Component {
   };
 
   checkAnswer = () => {
-    const answer = document.getElementById('answerInput').value.trim();
-
+    const str = document.getElementById("answerInput").value.trim();
+    const answer = str.replace(/\s{2,}/g, " ");
     const { questions, quiz } = this.state;
 
     if (answer !== questions[quiz].answer) {
-      this.setState({ checkAnswerMessage: 'Resposta incorreta' });
+      this.setState({ checkAnswerMessage: "Resposta incorreta" });
     } else {
       const nextQuiz = this.state.quiz + 1;
       if (nextQuiz < questions.length) {
         this.setState({
           quiz: nextQuiz,
-          checkAnswerMessage: '',
+          checkAnswerMessage: ""
         });
-        document.getElementById('answerInput').value = '';
+        document.getElementById("answerInput").value = "";
       } else {
         this.setState({
           endGame: true,
-          checkAnswerMessage: ''
+          checkAnswerMessage: ""
         });
       }
     }
@@ -58,38 +58,40 @@ export default class Quiz extends Component {
           <img src="" alt="" />
         </ImageFrame>
         <QuizFrame>
-
           {question && (
             <>
               <Question>
                 <p>{question.title}</p>
               </Question>
               <Answers>
-                {question.options.map(function (q, index) {
+                {question.options.map(function(q, index) {
                   return <li key={index}>{q}</li>;
                 })}
               </Answers>
               <Code>
-                {question.code && question.code.split('\n').map((line, index) => {
-                  if (line === '|input|') {
+                {question.code &&
+                  question.code.split("\n").map((line, index) => {
+                    if (line === "|input|") {
+                      return (
+                        <Fragment key={index}>
+                          <input type="text" id="answerInput" />
+                          <br />
+                        </Fragment>
+                      );
+                    }
+
                     return (
                       <Fragment key={index}>
-                        <input type="text" id="answerInput" />
+                        <span>{line}</span>
                         <br />
                       </Fragment>
                     );
-                  }
-
-                  return (
-                    <Fragment key={index}>
-                      <span>{line}</span>
-                      <br />
-                    </Fragment>
-                  );
-                })}
+                  })}
               </Code>
               <span>{this.state.checkAnswerMessage}</span>
-              {!this.state.endGame && <button onClick={this.checkAnswer}>Enviar</button>}
+              {!this.state.endGame && (
+                <button onClick={this.checkAnswer}>Enviar</button>
+              )}
             </>
           )}
         </QuizFrame>
