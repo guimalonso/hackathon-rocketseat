@@ -17,16 +17,14 @@ export default class Quiz extends Component {
   loadQuestions = async () => {
     const response = await api.get("/questions");
 
-    const questions = response;
+    const questions = response.data;
 
-    console.log(questions);
-    // this.setState({ questions : docs, productInfo, page})
-
-    // console.log(this.state.products)
-    // console.log(this.state.productInfo)
+    this.setState({ questions });
   };
 
   render() {
+    const { questions, quiz } = this.state;
+
     return (
       <>
         <ImageFrame>
@@ -35,7 +33,12 @@ export default class Quiz extends Component {
         </ImageFrame>
         <QuizFrame>
           <Question>
-            <p>amsdasd</p>
+            <p>
+              {questions.map(function(question) {
+                if (question.id === quiz)
+                  return <li key={question.id}>{question.title}</li>;
+              })}
+            </p>
           </Question>
           <Answers>
             <li>a</li>
