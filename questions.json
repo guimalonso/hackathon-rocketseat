@@ -46,7 +46,7 @@
       "id": 5,
       "title": "Conclua a função abaixo para que retorne a área de uma esfera. Utilize uma das opções abaixo considerando 'pi' como 3,14 e 'r' como valor do raio:",
       "options": [
-        "return 3.14 * r * r",
+        "3.14 * r * r",
         "4 * 3.14 * r * r",
         "return 3.14 * r * r",
         "return 4 * 3.14 * r * r"
