@@ -29,7 +29,7 @@ export const ImageFrame = styled.div`
 
   div {
     position: absolute;
-    top: 295px;
+    /* top: 295px; */
     left: 55px;
     margin-left: 0px;
     width: 100%
@@ -84,9 +84,9 @@ export const Char = styled.div`
     background-image: url("https://raw.githubusercontent.com/ferreirastudios/Ciclo-com-animation-e-keyframes/master/imagens/ciclo-animacao.png");
     width: 58px;
     height: 87px;
-    top: 30%;
+    top: calc((100vh / 2) - 25px);
     z-index: 99999;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-left: 0px;
     -webkit-animation: boy 0s steps(8) infinite;
     animation: boy 0s steps(8) infinite;
