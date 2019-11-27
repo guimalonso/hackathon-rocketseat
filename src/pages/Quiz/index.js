@@ -8,7 +8,8 @@ export default class Quiz extends Component {
   state = {
     questions: [],
     quiz: 0,
-    checkAnswerMessage: ''
+    checkAnswerMessage: '',
+    endGame: false
   };
 
   componentDidMount() {
@@ -30,11 +31,16 @@ export default class Quiz extends Component {
     if (answer !== questions[quiz].answer) {
       this.setState({ checkAnswerMessage: 'Resposta incorreta' });
     } else {
-      this.setState({
-        quiz: this.state.quiz + 1,
-        checkAnswerMessage: '',
-      });
-      document.getElementById('answerInput').value = '';
+      const nextQuiz = this.state.quiz + 1;
+      if (nextQuiz < questions.length) {
+        this.setState({
+          quiz: nextQuiz,
+          checkAnswerMessage: '',
+        });
+        document.getElementById('answerInput').value = '';
+      } else {
+        this.setState({ endGame: true });
+      }
     }
   };
 
@@ -80,7 +86,7 @@ export default class Quiz extends Component {
                 })}
               </Code>
               <span>{this.state.checkAnswerMessage}</span>
-              {questions[quiz + 1] && <button onClick={this.checkAnswer}>Enviar</button>}
+              {!this.state.endGame && <button onClick={this.checkAnswer}>Enviar</button>}
             </>
           )}
         </QuizFrame>
