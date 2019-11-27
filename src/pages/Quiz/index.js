@@ -28,6 +28,20 @@ export default class Quiz extends Component {
     this.setState({ questions });
   };
 
+  moveChar() {
+    const char = this.char.current;
+    char.style.animationDuration = '2s';
+
+    if (char.style.marginLeft === '') {
+      char.style.marginLeft = '0px';
+    }
+
+    char.style.marginLeft = (parseInt(char.style.marginLeft, 10) + 97) + 'px';
+    setTimeout(() => {
+      char.style.animationDuration = '0s';
+    }, 2000);
+  }
+
   checkAnswer = () => {
     const str = document.getElementById("answerInput").value.trim();
     const answer = str.replace(/\s{2,}/g, " ");
@@ -43,23 +57,13 @@ export default class Quiz extends Component {
           checkAnswerMessage: ""
         });
 
-        const char = this.char.current;
-        char.style.animationDuration = '2s';
-
-        if (char.style.marginLeft === '') {
-          char.style.marginLeft = '0px';
-        }
-
-        char.style.marginLeft = (parseInt(char.style.marginLeft, 10) + 97) + 'px';
-        setTimeout(() => {
-          char.style.animationDuration = '0s';
-        }, 2000);
       } else {
         this.setState({
           endGame: true,
           checkAnswerMessage: "Parabéns, você concluiu o desafio!"
         });
       }
+      this.moveChar();
     }
     document.getElementById("answerInput").value = "";
   };
