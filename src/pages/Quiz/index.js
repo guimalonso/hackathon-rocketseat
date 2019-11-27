@@ -24,7 +24,7 @@ export default class Quiz extends Component {
   };
 
   checkAnswer = () => {
-    const answer = document.getElementById('answerInput').value;
+    const answer = document.getElementById('answerInput').value.trim();
 
     const { questions, quiz } = this.state;
 
@@ -39,7 +39,10 @@ export default class Quiz extends Component {
         });
         document.getElementById('answerInput').value = '';
       } else {
-        this.setState({ endGame: true });
+        this.setState({
+          endGame: true,
+          checkAnswerMessage: ''
+        });
       }
     }
   };
